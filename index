@@ -52,7 +52,7 @@ color:white;
 </style>
 <script>
 var currentGuess,currentBox;
-var colors = ['#ff0000','#ffdd00','#ffff00','#00ff00','#0000ff','#dd00ff'];
+var colors = ['#ff0000','#ffcc66','#ffff66','#00ff00','#0000ff','#ff66ff'];
 var answer = [colors[Math.floor(Math.random()*6)],colors[Math.floor(Math.random()*6)],colors[Math.floor(Math.random()*6)],colors[Math.floor(Math.random()*6)]];
 
 function winTheGame(){
