@@ -58,7 +58,7 @@ color:white;
 </style>
 <script>
 var currentGuess,currentBox;
-var colors = ['#ff0000','#ffdd00','#ffff00','#00ff00','#0000ff','#dd00ff'];
+var colors = ['#ff0000','#ffcc66','#ffff66','#00ff00','#0000ff','#ff66ff'];
 var answer = [colors[Math.floor(Math.random()*6)],colors[Math.floor(Math.random()*6)],colors[Math.floor(Math.random()*6)],colors[Math.floor(Math.random()*6)]];
 
 function winTheGame(){
@@ -115,9 +115,9 @@ function makeColors(){
 		clr.setAttribute('class','clr');
 		clr.setAttribute('id',colors[i]);
 		clr.style.backgroundColor = colors[i];
-		clr.addEventListener('click',function(){
-			currentBox.style.backgroundColor = event.target.id;
-			currentBox.color = event.target.id;
+		clr.addEventListener('click',function(e){
+			currentBox.style.backgroundColor = e.target.id;
+			currentBox.color = e.target.id;
 			b = false
 			for(i=0;i<4;i++){
 				if(currentGuess.sequence[i].color=="black"){
@@ -131,21 +131,21 @@ function makeColors(){
 				but = document.createElement('button');
 				currentGuess.getElementsByTagName('span')[0].appendChild(but);
 				but.innerText = "Go!";
-				but.addEventListener('click',function(){
-					event.target.style.visibility = "hidden";
+				but.addEventListener('click',function(e){
+					e.target.style.visibility = "hidden";
 					currentBox.style.borderColor = 'white';
 					checkGuess();
 				});
 			}
 		});
-		clr.addEventListener('mousedown',function(){
-			event.target.style.borderStyle = "inset";
+		clr.addEventListener('mousedown',function(e){
+			e.target.style.borderStyle = "inset";
 		});
-		clr.addEventListener('mouseout',function(){
-			event.target.style.borderStyle = "outset";
+		clr.addEventListener('mouseout',function(e){
+			e.target.style.borderStyle = "outset";
 		});
-		clr.addEventListener('mouseup',function(){
-			event.target.style.borderStyle = "outset";
+		clr.addEventListener('mouseup',function(e){
+			e.target.style.borderStyle = "outset";
 		});
 		pallet.appendChild(clr);
 	}
